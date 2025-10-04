@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Age & Birthday Countdown</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>🎂 Age & Birthday Countdown 🎉</h1>
+    <p>Enter your Date of Birth to see your exact age and the live countdown to your next birthday.</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label for="dob"><strong>Date of Birth:</strong></label>
+      <input type="date" id="dob" />
+      <button id="calculateBtn">Calculate</button>
+    </section>
+
+    <section class="panels">
+      <div class="panel" id="ageResult">
+        <h2>📊 Your Age</h2>
+        <div class="placeholder">Enter your date of birth and click Calculate.</div>
+      </div>
+
+      <div class="panel highlight" id="countdown">
+        <h2>⏳ Next Birthday Countdown</h2>
+        <div class="placeholder">Countdown will appear here.</div>
+      </div>
+    </section>
+  </main>
+  <footer>
+  <small>
+    © <span id="year"></span> | 
+    <a href="https://www.linkedin.com/in/dixit-gohil" target="_blank">
+      <i class="fa-brands fa-linkedin"></i><span id="footerName">Dixit Gohil</span>
+    </a>
+  </small>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>
