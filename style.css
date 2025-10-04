@@ -150,3 +150,18 @@ footer i {
   font-size: 18px;
   vertical-align: middle;
 }
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  input, button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+}
