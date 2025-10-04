@@ -1,11 +1,12 @@
 :root {
-  --bg1: #f9d423;
-  --bg2: #ff4e50;
-  --text: #1f1f1f;
-  --white: #ffffff;
+  --bg-dark: #121212;
+  --text-light: #e0e0e0;
+  --primary-blue: #00bfff;
+  --primary-blue-hover: #0099cc;
+  --panel-bg: #1e1e1e;
   --accent: #d6336c;
-  --success: #28a745;
-  --shadow: rgba(0, 0, 0, 0.15);
+  --shadow: rgba(0, 0, 0, 0.3);
+  --linkedin-blue: #0077b5;
 }
 
 * {
@@ -14,22 +15,26 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--text);
-  background: linear-gradient(120deg, var(--bg1), var(--bg2));
-  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 header, footer {
   text-align: center;
   padding: 16px 20px;
-  color: #222;
 }
 
 h1 {
-  margin: 0 0 8px;
+  margin: 0 0 12px;
+  color: var(--primary-blue);
+  font-size: 32px;
 }
 
 main {
@@ -40,7 +45,7 @@ main {
 }
 
 .controls {
-  background: var(--white);
+  background: var(--panel-bg);
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 6px 20px var(--shadow);
@@ -55,17 +60,19 @@ label {
   font-weight: 600;
 }
 
-input[type="date"] {
+input[type="date"], input[type="text"] {
   padding: 8px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #333;
   border-radius: 8px;
+  background-color: #2c2c2c;
+  color: var(--text-light);
   min-width: 220px;
 }
 
 button {
   padding: 10px 16px;
-  background: var(--success);
-  color: #fff;
+  background: var(--primary-blue);
+  color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -73,7 +80,7 @@ button {
 }
 
 button:hover {
-  filter: brightness(0.95);
+  background-color: var(--primary-blue-hover);
 }
 
 .panels {
@@ -84,7 +91,7 @@ button:hover {
 }
 
 .panel {
-  background: var(--white);
+  background: var(--panel-bg);
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 6px 20px var(--shadow);
@@ -92,15 +99,16 @@ button:hover {
 
 .panel h2 {
   margin-top: 0;
+  color: var(--primary-blue);
 }
 
 .placeholder {
-  color: #666;
+  color: #999;
   font-style: italic;
 }
 
 .highlight {
-  border: 3px solid #ffd166;
+  border: 3px solid var(--accent);
 }
 
 .result-list {
@@ -111,7 +119,7 @@ button:hover {
 
 .result-list li {
   padding: 6px 0;
-  border-bottom: 1px dashed #eee;
+  border-bottom: 1px dashed #444;
 }
 
 .count-value {
@@ -121,22 +129,8 @@ button:hover {
   margin-top: 8px;
 }
 
-@media (max-width: 900px) {
-  .panels {
-    grid-template-columns: 1fr;
-  }
-}
 footer a {
-  color: #0077b5; /* LinkedIn blue */
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-footer a {
-  color: #0077b5; /* LinkedIn blue */
+  color: var(--linkedin-blue);
   text-decoration: none;
   font-weight: bold;
 }
@@ -150,6 +144,14 @@ footer i {
   font-size: 18px;
   vertical-align: middle;
 }
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .panels {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
   body {
     padding: 10px;
@@ -164,44 +166,4 @@ footer i {
     font-size: 24px;
     text-align: center;
   }
-}
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #121212; /* black */
-  color: #e0e0e0; /* light gray */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-h1 {
-  color: #00bfff; /* blue */
-}
-
-input, button {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-}
-
-input {
-  background-color: #1e1e1e;
-  color: #ffffff;
-  border: 1px solid #333;
-}
-
-button {
-  background-color: #00bfff;
-  color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0099cc;
 }
